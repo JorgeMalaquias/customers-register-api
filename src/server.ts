@@ -1,7 +1,7 @@
 import express, { Express } from "express";
 import "express-async-errors";
 import cors from "cors";
-import routes from "./infra/routes";
+import { CustomersRouter } from "./infra/routes/customersRouter";
 
 class Server {
     private port?: string;
@@ -13,7 +13,7 @@ class Server {
     settings() {
         this.app.use(express.json());
         this.app.use(cors());
-        this.app.use(routes);
+        this.app.use((new CustomersRouter()).router);
     }
     listen() {
         this.app.listen(this.port, () => {
