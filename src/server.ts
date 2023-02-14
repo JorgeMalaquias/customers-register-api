@@ -1,16 +1,28 @@
-import express from "express";
+import express, { Express } from "express";
 import "express-async-errors";
 import cors from "cors";
 import routes from "./infra/routes";
 
-const server = express();
+class Server {
+    private port?: string;
+    private app: Express;
+    constructor(app: Express, port?: string) {
+        this.port = port;
+        this.app = app;
+    }
+    settings() {
+        this.app.use(express.json());
+        this.app.use(cors());
+        this.app.use(routes);
+    }
+    listen() {
+        this.app.listen(this.port, () => {
+            console.log(`server running on port ${this.port}`);
+        })
+    }
+}
 
+const server = new Server(express(), process.env.PORT);
 
-server.use(express.json());
-server.use(cors());
-
-server.use(routes);
-
-server.listen(process.env.PORT, () => {
-    console.log(`server running on port ${process.env.PORT}`);
-})
+server.settings();
+server.listen();
