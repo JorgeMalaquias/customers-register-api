@@ -10,4 +10,8 @@ describe('Cpf entity tests', () => {
 
         expect(() => new Cpf('11122233344')).toThrow();
     })
+    it('Should not be possible to create a cpf with invalid format', () => {
+
+        expect(() => new Cpf('111222')).toThrow();
+    })
 })
