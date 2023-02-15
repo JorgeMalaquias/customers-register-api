@@ -4,7 +4,7 @@ interface CustomerType {
     birth: Date;
 }
 
-export class Customer {
+export class CustomerEntity {
     private props: CustomerType;
 
     constructor(value: CustomerType) {

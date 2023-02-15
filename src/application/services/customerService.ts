@@ -1,4 +1,4 @@
-import { CreateUserBody } from "../infra/DTOs/create-user-body";
+import { CreateUserBody } from "../../infra/http/DTOs/create-user-body";
 
 
 export class CustomerService {

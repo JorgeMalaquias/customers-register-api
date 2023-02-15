@@ -12,4 +12,6 @@ model Customer {
   name  String
   cpf   String   @unique
   birth DateTime
+
+  @@map("customers")
 }

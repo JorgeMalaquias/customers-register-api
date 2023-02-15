@@ -1,7 +1,7 @@
 import express, { Express } from "express";
 import "express-async-errors";
 import cors from "cors";
-import { CustomerRoutes } from "./infra/routes/customerRoutes";
+import { CustomerRoutes } from "./infra/http/routes/customerRoutes";
 
 class Server {
 
