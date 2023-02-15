@@ -3,15 +3,15 @@ export class Cpf {
 
     constructor(data: string) {
         this.content = data;
-        this.validationComparing(this.content[9], this.validationCalc(this.content.substring(0, 10)).toString());
-        this.validationComparing(this.content[10], this.validationCalc(this.content.substring(0, 11)).toString());
+        this.validationComparing(this.content[9], this.validationCalc(this.content.substring(0, 9)).toString());
+        this.validationComparing(this.content[10], this.validationCalc(this.content.substring(0, 10)).toString());
     }
 
     validationCalc(data: string) {
         let mult = 2;
         let sum = 0;
+        console.log(data[data.length - 1]);
         for (let i = data.length - 1; i >= 0; i--) {
-            console.log(`${Number(data[i])} * ${mult} = ${Number(data[i]) * mult}`);
             sum += Number(data[i]) * mult;
             mult++;
         }
