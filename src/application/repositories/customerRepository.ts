@@ -1,5 +1,4 @@
 import { Customer } from "@prisma/client";
-import { CustomerEntity } from "../entities/customer";
 
 
 export abstract class CustomerRepository {
