@@ -15,9 +15,9 @@ export class Customer {
         return this.props.name;
     }
     public get cpf() {
-        return this.props.name;
+        return this.props.cpf;
     }
     public get birth() {
-        return this.props.name;
+        return this.props.birth;
     }
 }
