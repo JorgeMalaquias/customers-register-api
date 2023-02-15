@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { Customer } from "../../entities/customer";
 import { CustomerService } from "../../services/customerService";
 
 export class CustomerController {
@@ -12,7 +11,7 @@ export class CustomerController {
 
     async getCustomerWithPagination(req: Request, res: Response) {
         const { size, page } = req.query;
-        const customers = await CustomerController.customerService.getMany(size, page);
+        const customers = await CustomerController.customerService.getMany(Number(size), Number(page));
         res.send(customers);
     }
     async getCustomerByCpf(req: Request, res: Response) {

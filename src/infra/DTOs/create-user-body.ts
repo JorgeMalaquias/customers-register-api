@@ -1,5 +1,5 @@
 export interface CreateUserBody {
     name: string;
     cpf: string;
-    birth: Date;
+    birth: string;
 }

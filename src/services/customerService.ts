@@ -1,4 +1,4 @@
-
+import { CreateUserBody } from "../infra/DTOs/create-user-body";
 
 
 export class CustomerService {
@@ -12,14 +12,14 @@ export class CustomerService {
         return this.customerRepository;
     }
 
-    async getMany(): Promise<any> {
+    async getMany(size: number, page: number): Promise<any> {
         return 'getMany not implemented';
     }
 
-    async getOne() {
+    async getOne(cpf: string) {
         return 'getOne not implemented';
     }
-    async createCustomer() {
+    async createCustomer(data: CreateUserBody) {
         return 'createCustomer not implemented';
     }
 }
