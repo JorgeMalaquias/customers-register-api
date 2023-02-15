@@ -1,6 +1,8 @@
+import { Cpf } from "./cpf";
+
 interface CustomerType {
     name: string;
-    cpf: string;
+    cpf: Cpf;
     birth: Date;
 }
 
@@ -11,13 +13,13 @@ export class CustomerEntity {
         this.props = value;
     }
 
-    public get name() {
+    public get name(): string {
         return this.props.name;
     }
-    public get cpf() {
+    public get cpf(): Cpf {
         return this.props.cpf;
     }
-    public get birth() {
+    public get birth(): Date {
         return this.props.birth;
     }
 }
