@@ -17,9 +17,13 @@ export class CustomerService {
         return await this.customerRepository.findMany(page * size, size);
     }
 
+
+
     async getOne(cpf: string) {
         return await this.customerRepository.find(cpfMapper(cpf));
     }
+
+
     async createCustomer(data: CreateCustomerBody) {
 
         const alreadyExist = await this.getOne(cpfMapper(data.cpf));
