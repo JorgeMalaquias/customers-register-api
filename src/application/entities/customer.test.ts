@@ -1,3 +1,4 @@
+import { cpfMapper } from "../mappers/customerRepositoryMapper"
 import { Cpf } from "./cpf"
 import { CustomerEntity } from "./customer"
 

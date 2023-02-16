@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
+import { CustomerRepository } from "../../../application/repositories/customerRepository";
 import { CustomerService } from "../../../application/services/customerService";
 
 export class CustomerController {
 
     private static customerService: CustomerService;
-
     constructor() {
         CustomerController.customerService = new CustomerService();
     }

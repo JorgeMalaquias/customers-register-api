@@ -1,5 +1,5 @@
 export class Cpf {
-    private content;
+    private content: string;
 
     constructor(data: string) {
 
