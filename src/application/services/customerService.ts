@@ -23,7 +23,7 @@ export class CustomerService {
     async createCustomer(data: CreateCustomerBody) {
 
         const alreadyExist = await this.getOne(cpfMapper(data.cpf));
-        if (alreadyExist !== null) {
+        if (alreadyExist !== null && alreadyExist !== undefined) {
             throw ({ type: 'conflict', message: 'The informed cpf is already been used!' });
         }
         const newCustomer = new CustomerEntity({

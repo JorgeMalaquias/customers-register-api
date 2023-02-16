@@ -24,7 +24,7 @@ export class CustomerController {
     }
     async createCustomer(req: Request, res: Response) {
         const customer = await CustomerController.customerService.createCustomer(req.body);
-        res.send(customer).status(201);
+        res.status(201).send(customer);
     }
 
 

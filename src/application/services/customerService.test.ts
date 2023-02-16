@@ -3,6 +3,8 @@ import { InMemoryCustomerRepository } from "../../../test/repositories/inMemoryC
 import { CreateCustomerBody } from "../../infra/http/DTOs/create-user-body";
 import { CustomerService } from "./customerService";
 
+
+
 describe('Customer service tests', () => {
     it('Should be possible to create a new customer and save in the repository', async () => {
         const customerRepository = new InMemoryCustomerRepository();
