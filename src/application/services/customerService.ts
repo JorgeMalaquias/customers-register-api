@@ -14,10 +14,16 @@ export class CustomerService {
 
 
     async getMany(size: number, page: number): Promise<any> {
+        await this.paginationValidation(size * page);
         return await this.customerRepository.findMany(page * size, size);
     }
 
-
+    async paginationValidation(skip: number): Promise<void> {
+        const n = await this.customerRepository.count();
+        if (n !== 0 && skip > n) {
+            throw ({ type: 'no_content', message: 'The informed page does not exist because there are no customers enough!' });
+        }
+    }
 
     async getOne(cpf: string) {
         return await this.customerRepository.find(cpfMapper(cpf));

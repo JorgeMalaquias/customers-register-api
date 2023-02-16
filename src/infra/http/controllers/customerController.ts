@@ -16,7 +16,7 @@ export class CustomerController {
         const { size, page } = req.query;
         const customers = await CustomerController.customerService.getMany(Number(size), Number(page));
         if (customers.length === 0) {
-            res.send('There are no customers registered or the page informed does not exist!')
+            res.send('There are no customers registered!')
         }
         res.send(customers);
     }

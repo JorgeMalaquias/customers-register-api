@@ -14,4 +14,7 @@ export class InMemoryCustomerRepository implements CustomerRepository {
     async findMany(skip: number, take: number): Promise<Customer[]> {
         return this.customers.slice(0, skip + take);
     }
+    async count(): Promise<number> {
+        return this.customers.length;
+    }
 }

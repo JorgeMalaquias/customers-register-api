@@ -27,4 +27,7 @@ export class PrismaCustomerRepository implements CustomerRepository {
             take
         })
     }
+    async count(): Promise<number> {
+        return await prisma.customer.count();
+    }
 }
