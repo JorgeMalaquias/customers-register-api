@@ -21,18 +21,22 @@ export class CustomerService {
     async paginationValidation(skip: number): Promise<void> {
         const n = await this.customerRepository.count();
         if (n !== 0 && skip > n) {
-            throw ({ type: 'no_content', message: 'The informed page does not exist because there are no customers enough!' });
+            throw ({ type: 'bad_request', message: 'The informed page does not exist because there are no customers enough!' });
         }
     }
 
     async getOne(cpf: string) {
-        return await this.customerRepository.find(cpfMapper(cpf));
+        const customer = await this.customerRepository.find(cpfMapper(cpf));
+        if (customer === null || customer === undefined) {
+            throw ({ type: 'not_found', message: 'There is no customer registered with the informed cpf!' });
+        }
+        return customer;
     }
 
 
     async createCustomer(data: CreateCustomerBody) {
 
-        const alreadyExist = await this.getOne(cpfMapper(data.cpf));
+        const alreadyExist = await this.customerRepository.find(cpfMapper(data.cpf));
         if (alreadyExist !== null && alreadyExist !== undefined) {
             throw ({ type: 'conflict', message: 'The informed cpf is already been used!' });
         }
