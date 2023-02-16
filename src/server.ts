@@ -3,7 +3,7 @@ import "express-async-errors";
 import cors from "cors";
 import { CustomerRoutes } from "./infra/http/routes/customerRoutes";
 
-class Server {
+export class Server {
 
     private port?: string;
     private app: Express;
@@ -24,6 +24,9 @@ class Server {
         this.app.listen(this.port, () => {
             console.log(`server running on port ${this.port}`);
         })
+    }
+    public get appTest() {
+        return this.app;
     }
 }
 

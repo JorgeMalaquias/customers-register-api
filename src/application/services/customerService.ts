@@ -18,9 +18,14 @@ export class CustomerService {
     }
 
     async getOne(cpf: string) {
-        return await this.customerRepository.find(cpf);
+        return await this.customerRepository.find(cpfMapper(cpf));
     }
     async createCustomer(data: CreateCustomerBody) {
+
+        const alreadyExist = await this.getOne(cpfMapper(data.cpf));
+        if (alreadyExist !== null) {
+            throw 'conflict';
+        }
         const newCustomer = new CustomerEntity({
             cpf: new Cpf(cpfMapper(data.cpf)),
             name: data.name,
