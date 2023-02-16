@@ -2,6 +2,7 @@ import express, { Express } from "express";
 import "express-async-errors";
 import cors from "cors";
 import { CustomerRoutes } from "./infra/http/routes/customerRoutes";
+import { errorHandlerMiddleware } from "./infra/http/middlewares/errorHandler";
 
 export class Server {
 
@@ -19,6 +20,7 @@ export class Server {
         this.app.use(express.json());
         this.app.use(cors());
         this.app.use(this.customerRoutes.routes);
+        this.app.use(errorHandlerMiddleware);
     }
     listen(): void {
         this.app.listen(this.port, () => {

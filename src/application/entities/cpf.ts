@@ -30,12 +30,9 @@ export class Cpf {
 
     }
     validationComparing(digit: string, result: string) {
-        /*
+
         if (digit !== result) {
-            throw ({ type: 'conflict', message: 'The informed email is already been used!' });
-        }*/
-        if (digit !== result) {
-            throw ('The cpf is not valid');
+            throw ({ type: 'unprocessable_entity', message: 'Invalid cpf!' });
         }
     }
 
