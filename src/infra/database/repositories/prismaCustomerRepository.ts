@@ -4,6 +4,7 @@ import { Replace } from "../../../helpers/replace";
 import { prisma } from "../prisma";
 
 export class PrismaCustomerRepository implements CustomerRepository {
+
     async create(customer: Replace<Customer, { id?: number | undefined; }>): Promise<void> {
         await prisma.customer.create({
             data: {

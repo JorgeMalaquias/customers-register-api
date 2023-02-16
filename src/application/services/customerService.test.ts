@@ -39,7 +39,7 @@ describe('Customer service tests', () => {
         };
         await customerService.createCustomer(dataNewUser);
 
-        const customer: Customer | undefined = await customerService.getOne('04787677063');
+        const customer: Customer | undefined | null = await customerService.getOne('04787677063');
         expect(customerRepository.customers).toHaveLength(1);
         expect(customer).toBeTruthy();
     })
