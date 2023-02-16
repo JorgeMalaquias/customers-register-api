@@ -8,7 +8,7 @@ export class InMemoryCustomerRepository implements CustomerRepository {
     async create(customer: Replace<Customer, { id?: number }>): Promise<void> {
         this.customers.push({ ...customer, id: Math.floor(Math.random()) });
     }
-    async find(cpf: string): Promise<Customer | undefined> {
+    async find(cpf: string): Promise<Customer | undefined | null> {
         return this.customers.find((e) => e.cpf === cpf);
     }
     async findMany(skip: number, take: number): Promise<Customer[]> {
