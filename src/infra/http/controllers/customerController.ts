@@ -15,6 +15,9 @@ export class CustomerController {
     async getCustomerWithPagination(req: Request, res: Response) {
         const { size, page } = req.query;
         const customers = await CustomerController.customerService.getMany(Number(size), Number(page));
+        if (customers.length === 0) {
+            res.send('There are no customers registered!')
+        }
         res.send(customers);
     }
     async getCustomerByCpf(req: Request, res: Response) {

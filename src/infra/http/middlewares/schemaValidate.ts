@@ -23,7 +23,7 @@ export class SchemaValidate {
     execute(req: Request, res: Response, next: NextFunction) {
         const validation = SchemaValidate.schema.validate(req.body);
         if (validation.error) {
-            return res.status(422).send({ error: validation.error.message });
+            return res.status(400).send({ error: validation.error.message });
         }
         next();
     }
