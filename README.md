@@ -40,10 +40,10 @@ ou
 	
 #### Possíveis retornos da api:
 
-Status code `201` : indica que o novo cliente foi criado com sucesso!
-Status code `409` e mensagem `The informed cpf is already been used!`: indica que já existe um cliente cadastrado com o cpf informado no body da requisição!
-Status code `400`: indica que o body da requisição não tem formato válido!
-Status code `422` e mensagem `Invalid cpf!`: indica que, apesar dos dados no body terem formato válido, o cpf possui dígitos inválidos!
+- Status code `201` : indica que o novo cliente foi criado com sucesso!
+- Status code `409` e mensagem `The informed cpf is already been used!`: indica que já existe um cliente cadastrado com o cpf informado no body da requisição!
+- Status code `400`: indica que o body da requisição não tem formato válido!
+- Status code `422` e mensagem `Invalid cpf!`: indica que, apesar dos dados no body terem formato válido, o cpf possui dígitos inválidos!
 
 
 
@@ -57,7 +57,7 @@ Exemplo fictício de url da requisição:
 		
 Possíveis retornos da api:
 
-Status code 200 e um objeto com os dados do cliente, caso este exista, conforme exemplo fictício:
+- Status code 200 e um objeto com os dados do cliente, caso este exista, conforme exemplo fictício:
 
 ```json
 		{
@@ -68,7 +68,7 @@ Status code 200 e um objeto com os dados do cliente, caso este exista, conforme 
 		}
 ```
 	
-Status code 404 e mensagem `There is no customer registered with the informed cpf!`: indica que não existe cliente cadastrado com o cpf informado!
+- Status code 404 e mensagem `There is no customer registered with the informed cpf!`: indica que não existe cliente cadastrado com o cpf informado!
 
 
 
@@ -86,7 +86,7 @@ Neste exemplo será feita uma busca por paginação, com cada página possuindo 
 	
 #### Possíveis retornos da api:
 
-Status code 200 e um array com os dados dos clientes, caso estes existam, e de acordo com a paginação informada, e na ordem em que foram cadastrados, conforme exemplo fictício:
+- Status code 200 e um array com os dados dos clientes, caso estes existam, e de acordo com a paginação informada, e na ordem em que foram cadastrados, conforme exemplo fictício:
 
 ```json
 	[
@@ -105,7 +105,7 @@ Status code 200 e um array com os dados dos clientes, caso estes existam, e de a
 	]
 ```
 	
-Status code 400 e mensagem `The informed page does not exist because there are no customers enough!`: indica que o número da página informada é maior que o da última página, ou seja, não há clientes o suficiente cadastrados para que haja a página informada.
+- Status code 400 e mensagem `The informed page does not exist because there are no customers enough!`: indica que o número da página informada é maior que o da última página, ou seja, não há clientes o suficiente cadastrados para que haja a página informada.
 	
 Exemplo de url que retornaria este erro, considerando que só há 2 clientes cadastrados:
 
@@ -113,7 +113,7 @@ Exemplo de url que retornaria este erro, considerando que só há 2 clientes cad
 			
 Neste exemplo, para que esta requisição retornasse pelo menos um array com 1 cliente seria necessário haver pelo menos 6 clientes cadastrados. Se fosse passado 2 como valor de `page` deveriam haver pelo menos 11 clientes cadastrados.
 	
-Status code 200 e mensagem `There are no customers registered!`: indica que não existem clientes cadastrados ainda!
+- Status code 200 e mensagem `There are no customers registered!`: indica que não existem clientes cadastrados ainda!
 
 
 
