@@ -9,7 +9,8 @@ Se trata de uma api restful, para o recebimento, tratamento, listagem e cadastro
 ## Endpoints e seu funcionamento
 
 
-### POST '/customers' - Este endpoint efetua a criação de um novo cliente de acordo com dados informados no body da requisição.
+### POST '/customers'
+#### Este endpoint efetua a criação de um novo cliente de acordo com dados informados no body da requisição.
 
 Body da requisição deve conter um objeto com os seguintes atributos:
 
@@ -39,7 +40,8 @@ Possíveis retornos da api:
 	Status code 400: indica que o body da requisição não tem formato válido!
 	Status code 422 e mensagem 'Invalid cpf!': indica que, apesar dos dados no body terem formato válido, o cpf possui dígitos inválidos!
 
-### GET '/customers/:cpf' - Este endpoint efetua uma busca por um cliente específico dado o cpf informado como parâmetro na url.
+### GET '/customers/:cpf'
+#### Este endpoint efetua uma busca por um cliente específico dado o cpf informado como parâmetro na url.
 
 O cpf pode ser informado na url em dois formatos: '11122233344' ou '111.222.333-44'.
 	Exemplo fictício de url da requisição:  
@@ -58,7 +60,8 @@ Possíveis retornos da api:
 	
 	Status code 404 e mensagem 'There is no customer registered with the informed cpf!': indica que não existe cliente cadastrado com o cpf informado!
 
-### GET '/customers?page=x&size=x' - Este endpoint efetua uma busca por vários clientes por paginação de acordo com parâmetro informados na url via query. 
+### GET '/customers?page=x&size=x'
+#### Este endpoint efetua uma busca por vários clientes por paginação de acordo com parâmetro informados na url via query. 
 
 A quantidade de clientes por página é definida pelo valor de 'size' informado na url. O número da página a ser retornada é definido pelo valor de 'page' também informado na url, sendo 0(zero) a primeira página sempre.
  
