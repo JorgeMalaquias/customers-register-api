@@ -119,7 +119,7 @@ Neste exemplo, para que esta requisição retornasse pelo menos um array com 1 c
 
 ## Rodando a aplicação via docker
 
-###Necessário ter o docker instalado
+### Necessário ter o docker instalado
 
 
 1.Primeiro é necessário clonar este repositório em alguma pasta de sua preferência com o comando:
@@ -152,7 +152,7 @@ POSTGRES_DB=<DBexemplo>
 
 Agora, a aplicação deve estar rodando, e pronta para receber requisições através do localhost na porta com o valor que foi atribuído a variável PORT no arquivo `env.dev`.
 
-### Rodando testes via docker
+## Rodando testes via docker
 
 Caso, não tenha sido executado ainda o passo 1 de como rodar a aplicação via docker, executar eles antes de seguir os próximos passos.
 
