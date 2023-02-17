@@ -1,12 +1,12 @@
 services:
-  db:
+  db-dev:
       image: postgres:13
-      container_name: db
+      container_name: db-dev
       restart: always
       ports:
         - 2345:5432
       env_file:
-        - .env 
+        - .env.dev 
       environment:
         POSTGRES_USERNAME: ${POSTGRES_USERNAME}
         POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -14,19 +14,19 @@ services:
       volumes:
         - postgres-data:/var/lib/postgresql/data
 
-  api:
-      container_name: api
+  api-dev:
+      container_name: api-dev
       build: 
         context: .
-        dockerfile: Dockerfile
+        dockerfile: Dockerfile.dev
       ports:
         - 5000:5000
       depends_on:
-        - db 
+        - db-dev
       env_file:
-        - .env 
+        - .env.dev
       environment:
         DATABASE_URL: ${DATABASE_URL}
+      command: bash -c "npm run dev:migration:run && npm run dev"
 volumes:
     postgres-data:
-  
