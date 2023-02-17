@@ -119,7 +119,7 @@ Neste exemplo, para que esta requisição retornasse pelo menos um array com 1 c
 
 ## Rodando a aplicação via docker
 
-### Necessário ter o docker instalado
+### Necessário ter o docker instalado!!!
 
 
 1.Primeiro é necessário clonar este repositório em alguma pasta de sua preferência com o comando:
