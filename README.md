@@ -12,7 +12,7 @@ Se trata de uma api restful, para o recebimento, tratamento, listagem e cadastro
 ### POST '/customers'
 #### Este endpoint efetua a criação de um novo cliente de acordo com dados informados no body da requisição.
 
-Body da requisição deve conter um objeto com os seguintes atributos:
+##### Body da requisição deve conter um objeto com os seguintes atributos:
 
 - name: deve ser uma string, com a primeira letra sendo maiúscula;
 - cpf: deve ser uma string no formato '11122233344' ou '111.222.333-44', sendo composta somente por número, exceto pelos caracteres '.' e '-'. Além de possuir um dos formatos válidos, o cpf deve possuir dígitos válidos atendendo a regra de dígito descrita em https://www.macoratti.net/alg_cpf.htm#:~:text=O;
