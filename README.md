@@ -27,7 +27,9 @@ Exemplo fictício de body (o cpf do exemplo foi gerado em https://www.4devs.com.
 		  birth: "1995-03-15"
 		}
 ```
-		ou
+
+ou
+		
 ```json
 		{
 		  name: "Jorge Silva",
