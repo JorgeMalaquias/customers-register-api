@@ -22,9 +22,9 @@ Exemplo fictício de body (o cpf do exemplo foi gerado em https://www.4devs.com.
 	
 ```json
 		{
-		  name: "Jorge Silva",
-		  cpf: "706.764.730-40",
-		  birth: "1995-03-15"
+		  "name": "Jorge Silva",
+		  "cpf": "706.764.730-40",
+		  "birth": "1995-03-15"
 		}
 ```
 
@@ -32,9 +32,9 @@ ou
 		
 ```json
 		{
-		  name: "Jorge Silva",
-		  cpf: "70676473040",
-		  birth: "1995-03-15"
+		  "name": "Jorge Silva",
+		  "cpf": "70676473040",
+		  "birth": "1995-03-15"
 		}
 ```
 	
