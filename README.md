@@ -135,12 +135,13 @@ Com um terminal aberto na pasta onde foi clonado este repositório, rode o segui
 1.Criar um arquivo `env.dev` na pasta onde foi clonado este repositório, e atribuir valores às seguintes variáveis de ambiente conforme o arquivo de exemplo `.env.example`:
 
 ```bash
-PORT= **
-DATABASE_URL=
-POSTGRES_USERNAME=
-POSTGRES_PASSWORD=
-POSTGRES_DB=
+PORT= *valor de sua preferência*
+DATABASE_URL="postgresql://<USERexemplo>:<PASSWORDexemplo>@db-dev:5432/<DBexemplo>"
+POSTGRES_USERNAME=<USERexemplo>
+POSTGRES_PASSWORD=<PASSWORDexemplo>
+POSTGRES_DB=<DBexemplo>
 ```
+!!!Importante que a variável `DATABASE_URL`, siga o formato do exemplo, com os valores entre `<>` podendo ser de sua escolha desde que estes sejam iguais a os valores de POSTGRES_USERNAME, POSTGRES_PASSWORD, POSTGRES_DB, respectivamente.
 
 2.Com um terminal na mesma pasta ainda, rode o seguinte comando:
 
@@ -155,12 +156,14 @@ Agora, a aplicação deve estar rodando, e pronta para receber requisições atr
 1.Criar um arquivo `env.test` na pasta onde foi clonado este repositório, e atribuir valores às seguintes variáveis de ambiente conforme o arquivo de exemplo `.env.example`:
 
 ```bash
-PORT= **
-DATABASE_URL=
-POSTGRES_USERNAME=
-POSTGRES_PASSWORD=
-POSTGRES_DB=
+PORT= *valor de sua preferência*
+DATABASE_URL="postgresql://<USERexemplo>:<PASSWORDexemplo>@db-test:5432/<DBexemplo>"
+POSTGRES_USERNAME=<USERexemplo>
+POSTGRES_PASSWORD=<PASSWORDexemplo>
+POSTGRES_DB=<DBexemplo>
 ```
+
+!!!Importante que a variável `DATABASE_URL`, siga o formato do exemplo, com os valores entre `<>` podendo ser de sua escolha desde que estes sejam iguais a os valores de POSTGRES_USERNAME, POSTGRES_PASSWORD, POSTGRES_DB, respectivamente.
 
 2.Com um terminal na mesma pasta ainda, rode o seguinte comando:
 
