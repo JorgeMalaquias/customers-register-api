@@ -45,6 +45,8 @@ Status code `409` e mensagem `The informed cpf is already been used!`: indica qu
 Status code `400`: indica que o body da requisição não tem formato válido!
 Status code `422` e mensagem `Invalid cpf!`: indica que, apesar dos dados no body terem formato válido, o cpf possui dígitos inválidos!
 
+
+
 ### GET '/customers/:cpf'
 #### Este endpoint efetua uma busca por um cliente específico dado o cpf informado como parâmetro na url.
 
@@ -67,6 +69,8 @@ Status code 200 e um objeto com os dados do cliente, caso este exista, conforme 
 ```
 	
 Status code 404 e mensagem `There is no customer registered with the informed cpf!`: indica que não existe cliente cadastrado com o cpf informado!
+
+
 
 
 ### GET '/customers?page=x&size=x'
@@ -110,3 +114,58 @@ Exemplo de url que retornaria este erro, considerando que só há 2 clientes cad
 Neste exemplo, para que esta requisição retornasse pelo menos um array com 1 cliente seria necessário haver pelo menos 6 clientes cadastrados. Se fosse passado 2 como valor de `page` deveriam haver pelo menos 11 clientes cadastrados.
 	
 Status code 200 e mensagem `There are no customers registered!`: indica que não existem clientes cadastrados ainda!
+
+
+
+## Rodando a aplicação
+
+
+Primeiro é necessário clonar este repositório em alguma pasta de sua preferência com o comando:
+
+`https://github.com/JorgeMalaquias/customers-register-api.git`
+
+Com um terminal aberto na pasta onde foi clonado este repositório, rode o seguinte comando:
+
+```bash
+	npm i
+```
+
+### Rodando a aplicação via docker
+
+1.Criar um arquivo `env.dev` na pasta onde foi clonado este repositório, e atribuir valores às seguintes variáveis de ambiente conforme o arquivo de exemplo `.env.example`:
+
+```bash
+PORT= **
+DATABASE_URL=
+POSTGRES_USERNAME=
+POSTGRES_PASSWORD=
+POSTGRES_DB=
+```
+
+2.Com um terminal na mesma pasta ainda, rode o seguinte comando:
+
+```bash
+	npm run dev:docker
+```
+
+Agora, a aplicação deve estar rodando, e pronta para receber requisições através do localhost na porta com o valor que foi atribuído a variável PORT no arquivo `env.dev`.
+
+### Rodando testes via docker
+
+1.Criar um arquivo `env.test` na pasta onde foi clonado este repositório, e atribuir valores às seguintes variáveis de ambiente conforme o arquivo de exemplo `.env.example`:
+
+```bash
+PORT= **
+DATABASE_URL=
+POSTGRES_USERNAME=
+POSTGRES_PASSWORD=
+POSTGRES_DB=
+```
+
+2.Com um terminal na mesma pasta ainda, rode o seguinte comando:
+
+```bash
+	npm run test:docker
+```
+
+Logo, após depois de ser buildada a aplicação, os testes devem ser executados, e os resultados exibidos no terminal.
