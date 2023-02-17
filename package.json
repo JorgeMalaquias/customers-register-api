@@ -13,7 +13,8 @@
     "test": " jest --no-cache",
     "test:migration:run": "env-cmd -f .env.test prisma migrate deploy",
     "test:docker": "env-cmd -f .env.test docker-compose -f docker-compose.test.yml up --build",
-    "start": "npm run prisma:deploy && env-cmd -f .env node dist/server.js"
+    "start": "npm run migration:run && env-cmd -f .env node dist/server.js",
+    "start:docker": "docker-compose up --build"
   },
   "keywords": [],
   "author": "",
