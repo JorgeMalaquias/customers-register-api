@@ -152,7 +152,7 @@ Agora, a aplicação deve estar rodando, e pronta para receber requisições atr
 
 ### Rodando testes via docker
 
-Caso, não tenha sido executado ainda o passo 1 de como rodas a aplicação via docker, executar eles antes de seguir os próximos passos.
+Caso, não tenha sido executado ainda o passo 1 de como rodar a aplicação via docker, executar eles antes de seguir os próximos passos.
 
 1.Criar um arquivo `env.test` na pasta onde foi clonado este repositório, e atribuir valores às seguintes variáveis de ambiente conforme o arquivo de exemplo `.env.example`:
 
