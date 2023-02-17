@@ -27,5 +27,6 @@ services:
         - .env.dev
       environment:
         DATABASE_URL: ${DATABASE_URL}
+      command: bash -c "npm run dev:migration:run && npm run dev"
 volumes:
     postgres-data:

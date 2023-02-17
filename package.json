@@ -7,7 +7,7 @@
     "migration:generate": "prisma migrate dev",
     "migration:run": "prisma migrate deploy",
     "build": "tsc",
-    "dev": "npm run prisma:deploy && env-cmd -f .env.dev nodemon src/server.ts",
+    "dev": "env-cmd -f .env.dev nodemon src/server.ts",
     "dev:migration:run": "env-cmd -f .env.dev prisma migrate deploy",
     "dev:docker": "env-cmd -f .env.dev docker-compose -f docker-compose.dev.yml up --build",
     "test": " jest --no-cache",
