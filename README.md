@@ -20,21 +20,21 @@ Se trata de uma api restful, para o recebimento, tratamento, listagem e cadastro
 
 Exemplo fictício de body (o cpf do exemplo foi gerado em https://www.4devs.com.br/gerador_de_cpf):
 	
-		```json
+```json
 		{
 		  name: "Jorge Silva",
 		  cpf: "706.764.730-40",
 		  birth: "1995-03-15"
 		}
-		```
+```
 		ou
-		```json
+```json
 		{
 		  name: "Jorge Silva",
 		  cpf: "70676473040",
 		  birth: "1995-03-15"
 		}
-		```
+```
 	
 #### Possíveis retornos da api:
 
@@ -49,20 +49,20 @@ Status code `422` e mensagem `Invalid cpf!`: indica que, apesar dos dados no bod
 O cpf pode ser informado na url em dois formatos: `11122233344` ou `111.222.333-44`.
 Exemplo fictício de url da requisição:  
 	
-		`/customers/706.764.730-40` ou `/customers/70676473040`
+`/customers/706.764.730-40` ou `/customers/70676473040`
 		
 Possíveis retornos da api:
 
 Status code 200 e um objeto com os dados do cliente, caso este exista, conforme exemplo fictício:
 
-		```json
+```json
 		{
 		  "id": 1,
 		  "name": "Jorge Silva",
 		  "cpf": "70676473040",
 		  "birth": "1995-03-15T00:00:00.000Z"
 		}
-		```
+```
 	
 Status code 404 e mensagem `There is no customer registered with the informed cpf!`: indica que não existe cliente cadastrado com o cpf informado!
 
@@ -74,7 +74,7 @@ A quantidade de clientes por página é definida pelo valor de `size` informado 
  
 Exemplo fictício de url da requisição: 
 		
-		`/customers?page=0&size=4`
+`/customers?page=0&size=4`
 
 Neste exemplo será feita uma busca por paginação, com cada página possuindo 4 clientes, e retornando a primeira página. Se fosse desejado obter a segunda página o valor de `page` deveria ser 1 e assim em diante para as próximas páginas.
 	
@@ -82,7 +82,7 @@ Neste exemplo será feita uma busca por paginação, com cada página possuindo 
 
 Status code 200 e um array com os dados dos clientes, caso estes existam, e de acordo com a paginação informada, e na ordem em que foram cadastrados, conforme exemplo fictício:
 
-	```json
+```json
 	[
 		  {
 		    "id": 1,
@@ -97,13 +97,13 @@ Status code 200 e um array com os dados dos clientes, caso estes existam, e de a
 		    "birth": "1995-03-15T00:00:00.000Z"
 		  }
 	]
-	```
+```
 	
 Status code 400 e mensagem `The informed page does not exist because there are no customers enough!`: indica que o número da página informada é maior que o da última página, ou seja, não há clientes o suficiente cadastrados para que haja a página informada.
 	
 Exemplo de url que retornaria este erro, considerando que só há 2 clientes cadastrados:
 
-		`/customers?page=1&size=5`
+`/customers?page=1&size=5`
 			
 Neste exemplo, para que esta requisição retornasse pelo menos um array com 1 cliente seria necessário haver pelo menos 6 clientes cadastrados. Se fosse passado 2 como valor de `page` deveriam haver pelo menos 11 clientes cadastrados.
 	
