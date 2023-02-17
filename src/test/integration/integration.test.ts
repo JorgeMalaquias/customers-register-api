@@ -1,10 +1,10 @@
-import { Server } from "../../src/server"
+import { Server } from "../../server"
 import express, { Express, response } from "express";
 import supertest from "supertest";
-import { prisma } from "../../src/infra/database/prisma";
+import { prisma } from "../../infra/database/prisma";
 import { Customer } from "@prisma/client";
 import { object, string } from "joi";
-import { cpfMapper } from "../../src/application/mappers/customerRepositoryMapper";
+import { cpfMapper } from "../../application/mappers/customerRepositoryMapper";
 
 const server = new Server(express());
 server.settings();

@@ -1,5 +1,5 @@
 import { Customer } from "@prisma/client";
-import { InMemoryCustomerRepository } from "../../../test/repositories/inMemoryCustomerRepository"
+import { InMemoryCustomerRepository } from "../../test/repositories/inMemoryCustomerRepository"
 import { prisma } from "../../infra/database/prisma";
 import { CreateCustomerBody } from "../../infra/http/DTOs/create-user-body";
 import { CustomerService } from "./customerService";

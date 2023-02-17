@@ -1,6 +1,6 @@
 import { Customer } from "@prisma/client";
-import { CustomerRepository } from "../../src/application/repositories/customerRepository";
-import { Replace } from "../../src/helpers/replace";
+import { CustomerRepository } from "../../application/repositories/customerRepository";
+import { Replace } from "../../helpers/replace";
 
 export class InMemoryCustomerRepository implements CustomerRepository {
     public customers: Customer[] = [];

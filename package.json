@@ -4,7 +4,11 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
+    "prisma:migrate": "env-cmd -f .env prisma migrate dev",
+    "prisma:deploy": "env-cmd -f .env prisma migrate deploy",
+    "build": "tsc",
     "dev": "env-cmd nodemon src/server.ts",
+    "start": "npm run prisma:migrate && env-cmd -f .env node dist/server.js",
     "test": "jest --no-cache"
   },
   "keywords": [],
