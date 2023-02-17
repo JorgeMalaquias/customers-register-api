@@ -117,10 +117,10 @@ Status code 200 e mensagem `There are no customers registered!`: indica que não
 
 
 
-## Rodando a aplicação
+## Rodando a aplicação via docker
 
 
-Primeiro é necessário clonar este repositório em alguma pasta de sua preferência com o comando:
+1.Primeiro é necessário clonar este repositório em alguma pasta de sua preferência com o comando:
 
 `https://github.com/JorgeMalaquias/customers-register-api.git`
 
@@ -130,9 +130,8 @@ Com um terminal aberto na pasta onde foi clonado este repositório, rode o segui
 	npm i
 ```
 
-### Rodando a aplicação via docker
 
-1.Criar um arquivo `env.dev` na pasta onde foi clonado este repositório, e atribuir valores às seguintes variáveis de ambiente conforme o arquivo de exemplo `.env.example`:
+2.Criar um arquivo `env.dev` na pasta onde foi clonado este repositório, e atribuir valores às seguintes variáveis de ambiente conforme o arquivo de exemplo `.env.example`:
 
 ```bash
 PORT= *valor de sua preferência*
@@ -143,7 +142,7 @@ POSTGRES_DB=<DBexemplo>
 ```
 !!!Importante que a variável `DATABASE_URL`, siga o formato do exemplo, com os valores entre `<>` podendo ser de sua escolha desde que estes sejam iguais a os valores de POSTGRES_USERNAME, POSTGRES_PASSWORD, POSTGRES_DB, respectivamente.
 
-2.Com um terminal na mesma pasta ainda, rode o seguinte comando:
+3.Com um terminal na mesma pasta ainda, rode o seguinte comando:
 
 ```bash
 	npm run dev:docker
@@ -152,6 +151,8 @@ POSTGRES_DB=<DBexemplo>
 Agora, a aplicação deve estar rodando, e pronta para receber requisições através do localhost na porta com o valor que foi atribuído a variável PORT no arquivo `env.dev`.
 
 ### Rodando testes via docker
+
+Caso, não tenha sido executado ainda o passo 1 de como rodas a aplicação via docker, executar eles antes de seguir os próximos passos.
 
 1.Criar um arquivo `env.test` na pasta onde foi clonado este repositório, e atribuir valores às seguintes variáveis de ambiente conforme o arquivo de exemplo `.env.example`:
 
